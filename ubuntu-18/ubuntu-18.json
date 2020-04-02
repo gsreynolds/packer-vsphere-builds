@@ -62,7 +62,11 @@
     "provisioners": [
       {
         "type": "shell",
-        "inline": ["echo 'template build complete'"]
+        "inline": [
+          "sudo apt update && sudo apt upgrade -y",
+          "sudo apt install python3-pip cloud-init curl -y",
+          "curl -sSL https://raw.githubusercontent.com/vmware/cloud-init-vmware-guestinfo/master/install.sh | sudo sh -"
+        ]
       }
     ]
   }
